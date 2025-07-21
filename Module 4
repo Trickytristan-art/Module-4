@@ -12,29 +12,31 @@ class Program
 
         try
         {
-            int number1 = Convert.ToInt32(input1);
-            int number2 = Convert.ToInt32(input2);
+            // Convert string inputs to integers
+            int num1 = Convert.ToInt32(input1);
+            int num2 = Convert.ToInt32(input2);
 
-            int result = Divide(number1, number2);
-            Console.WriteLine($"The result of {number1} divided by {number2} is: {result}");
+            // Perform division
+            int result = Divide(num1, num2);
+            Console.WriteLine($"Result: {num1} ÷ {num2} = {result}");
         }
         catch (FormatException ex)
         {
-            Console.WriteLine("Error: One or both of the inputs are not valid integers.");
-            Console.WriteLine($"Detailed error message: {ex.Message}");
+            Console.WriteLine("Error: One or both inputs are not valid integers.");
+            Console.WriteLine($"Details: {ex.Message}");
         }
         catch (DivideByZeroException ex)
         {
             Console.WriteLine("Error: Division by zero is not allowed.");
-            Console.WriteLine($"Detailed error message: {ex.Message}");
+            Console.WriteLine($"Details: {ex.Message}");
         }
         catch (Exception ex)
         {
             Console.WriteLine("An unexpected error occurred.");
-            Console.WriteLine($"Detailed error message: {ex.Message}");
+            Console.WriteLine($"Details: {ex.Message}");
         }
 
-        Console.WriteLine("Press any key to exit...");
+        Console.WriteLine("\nPress any key to exit...");
         Console.ReadKey();
     }
 
